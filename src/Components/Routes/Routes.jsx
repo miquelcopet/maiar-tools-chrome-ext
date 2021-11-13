@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Router, Switch } from "react-router-dom";
 import BootWithdraw from "../Screens/BootWithdraw/BootWithdraw";
+import DenverRestake from "../Screens/DenverRestake/DenverRestake";
 import MainScreen from "../Screens/MainScreen/MainScreen";
 import history from "./history";
 
@@ -10,6 +11,7 @@ export default function Routes() {
       <Switch>
         <Route exact path="/" component={MainScreen} />
         <Route exact path="/boot-withdraw" component={BootWithdraw} />
+        <Route exact path="/denver-restake" component={DenverRestake} />
       </Switch>
     </Router>
   );

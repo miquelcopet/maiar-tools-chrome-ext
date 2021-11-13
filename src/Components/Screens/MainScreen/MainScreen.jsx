@@ -12,7 +12,9 @@ export default function MainScreen() {
         <Button onClick={() => history.push("/boot-withdraw")}>
           Withdraw Bootstrapping
         </Button>
-        <Button>Denver Restake Calculator</Button>
+        <Button onClick={() => history.push("/denver-restake")}>
+          Denver Restake Calculator
+        </Button>
       </div>
     </DefaultLayout>
   );
