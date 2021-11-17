@@ -1,4 +1,4 @@
-export default {
+const style = {
   inputContainer: {
     display: "flex",
     flexDirection: "column",
@@ -12,3 +12,5 @@ export default {
     marginTop: 16,
   },
 };
+
+export default style;

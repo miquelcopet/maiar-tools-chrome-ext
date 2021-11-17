@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function useDenverRestakeHook() {
   const [state, setState] = useState({
-    availableLp: null,
+    availableLp: 1,
   });
 
   const actions = {

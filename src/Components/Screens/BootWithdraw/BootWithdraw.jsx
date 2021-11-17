@@ -30,12 +30,17 @@ export default function BootWithdraw() {
           />
         </div>
         <div
-          style={{ display: "flex", justifyContent: "flex-end", marginTop: 8 }}
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            marginTop: 8,
+            marginBottom: 8,
+          }}
         >
           <Statistic
             title={"Amount To Withdraw"}
             value={isNaN(result) ? "-" : result}
-            precision={4}
+            precision={5}
           />
         </div>
       </div>

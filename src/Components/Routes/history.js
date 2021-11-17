@@ -1,6 +1,6 @@
-import { createBrowserHistory } from "history";
+import { createMemoryHistory } from "history";
 
-const instance = createBrowserHistory();
+const instance = createMemoryHistory();
 
 export const navigateTo = (path) => instance.push(path);
 export const goBack = () => instance.goBack();

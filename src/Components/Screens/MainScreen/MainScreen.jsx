@@ -9,11 +9,24 @@ export default function MainScreen() {
   return (
     <DefaultLayout>
       <div style={styles.container}>
-        <Button onClick={() => history.push("/boot-withdraw")}>
+        <Button
+          style={{ flex: 1 }}
+          onClick={() => history.push("/boot-withdraw")}
+        >
           Withdraw Bootstrapping
         </Button>
-        <Button onClick={() => history.push("/denver-restake")}>
+
+        <Button
+          style={{ flex: 1 }}
+          onClick={() => history.push("/denver-restake")}
+        >
           Denver Restake Calculator
+        </Button>
+        <Button
+          style={{ flex: 1 }}
+          onClick={() => history.push("/apr-calculator")}
+        >
+          APR Calculator
         </Button>
       </div>
     </DefaultLayout>

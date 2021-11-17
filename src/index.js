@@ -1,3 +1,4 @@
+/*global chrome*/
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";

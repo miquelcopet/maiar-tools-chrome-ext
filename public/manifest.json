@@ -1,17 +1,19 @@
 {
-  "name": "Maiar Tools",
+  "name": "My Extension",
   "version": "1.0",
   "manifest_version": 2,
   "browser_action": {
-      "default_popup": "index.html",
-      "icons": {
-        "16": "icon16.png",
-        "48": "icon48.png",
-       "128": "icon128.png"
-     }
+      "default_popup": "index.html"
   },
+  "icons": { 
+    "16": "icon16.png",
+    "48": "icon48.png",
+   "128": "icon128.png" 
+  },
+  "content_security_policy": "script-src 'self' 'sha256-ITO8EGr10i9YBQYyRZXkg/g+sVbPtw3m+Iy1xjmXaVw='; object-src 'self'",
   "permissions": [
     "activeTab"
-  ],
-  "content_security_policy": "script-src 'self' 'sha256-ITO8EGr10i9YBQYyRZXkg/g+sVbPtw3m+Iy1xjmXaVw='; object-src 'self'"
+  ]
 }
+
+
