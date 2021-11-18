@@ -2,7 +2,7 @@ import React from "react";
 import AppInput from "../../Shared/AppInput/AppInput";
 import DefaultLayout from "../../Shared/DefaultLayout/DefaultLayout";
 import styles from "./AprCalculator.styles";
-import { Descriptions, Table, Collapse, Switch } from "antd";
+import { Table, Collapse } from "antd";
 import useAprCalculatorHook from "./AprCalculator.hook";
 
 export default function AprCalculator() {
@@ -39,14 +39,17 @@ export default function AprCalculator() {
     {
       key: "Mex",
       farm: "MEX",
+      color: state.mexColor,
     },
     {
       key: "Egld",
       farm: "EGLD-MEX",
+      color: state.egldColor,
     },
     {
       key: "Usd",
       farm: "EGLD-USDC",
+      color: state.usdColor,
     },
   ];
 
@@ -55,7 +58,10 @@ export default function AprCalculator() {
       title: "Farm",
       dataIndex: "farm",
       key: "farm",
-      width: "10%",
+      width: "6%",
+      render: (title, _) => {
+        return <div>{title}</div>;
+      },
     },
     {
       title: "APR MEX",
@@ -63,7 +69,6 @@ export default function AprCalculator() {
       key: "mexApr",
       width: "26%",
       render: (_, row) => {
-        console.log(row);
         return (
           <div>
             <AppInput
@@ -102,19 +107,38 @@ export default function AprCalculator() {
       dataIndex: "dollar",
       key: "dollar",
       render: (_, row) => {
+        const color = state[`${row.key.toLowerCase()}Color`];
         return (
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
             }}
           >
-            <div>{`Min: ${parseFloat(
-              actions.getMinuteDollar(state[`apr${row.key}`])
-            ).toFixed(2)}$`}</div>
-            <div>{`Hour: ${parseFloat(
-              actions.getHourDollar(state[`apr${row.key}`])
-            ).toFixed(2)}$`}</div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <div>{`Min: ${parseFloat(
+                actions.getMinuteDollar(state[`apr${row.key}`])
+              ).toFixed(2)}$`}</div>
+              <div>{`Hour: ${parseFloat(
+                actions.getHourDollar(state[`apr${row.key}`])
+              ).toFixed(2)}$`}</div>
+            </div>
+
+            <div
+              style={{
+                width: 24,
+                height: 24,
+                borderRadius: 32,
+                backgroundColor: color,
+              }}
+            />
           </div>
         );
       },

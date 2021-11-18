@@ -1,5 +1,5 @@
 {
-  "name": "My Extension",
+  "name": "Maiar Tools",
   "version": "1.0",
   "manifest_version": 2,
   "browser_action": {
