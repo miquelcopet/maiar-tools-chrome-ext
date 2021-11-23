@@ -14,12 +14,14 @@ export default function BootWithdraw() {
       <div style={{ paddingLeft: 8, paddingRight: 8 }}>
         <div style={styles.inputContainer}>
           <AppInput
-            hint={"My Earned MEX ( $ )"}
+            hint={"My Earned MEX"}
+            prefix={"$"}
             value={state.earnedMex}
             onChange={(value) => actions.setField("earnedMex", value)}
           />
           <AppInput
-            hint={"My staked LP ( $ )"}
+            hint={"My staked LP"}
+            prefix={"$"}
             value={state.stakedLpDollar}
             onChange={(value) => actions.setField("stakedLpDollar", value)}
           />
